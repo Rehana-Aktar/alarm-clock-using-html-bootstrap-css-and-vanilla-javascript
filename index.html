@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./assets/js.svg.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <script defer src="./js/bootstrap.bundle.min.js"></script>
+        <script defer src="./js/script.js"></script>
+        <title>Alarm Clock Using HTML, CSS & JavaScript</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Alarm Clock</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container my-4">
+            <button class="btn btn-primary testBtn">Click</button>
+            <h1 class="card-title text-center"></h1>
+            <form id="userForm">
+                <div class="my-2">
+                    <label for="userHour" class="form-label h5">Enter Hour</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="userHour"
+                        id="userHour"
+                        required
+                    />
+                </div>
+                <div class="mb-2">
+                    <label for="userMinute" class="form-label h5">Enter Minutes</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="userMinute"
+                        id="userMinute"
+                        required
+                    />
+                </div>
+                <div class="mb-2">
+                    <label for="userSecond" class="form-label h5">Enter Seconds</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        name="userSecond"
+                        id="userSecond"
+                        required
+                    />
+                </div>
+                <div class="mb-2">
+                    <label for="userMeridiem" class="form-label h5">Enter AM or PM</label>
+                    <select name="userMeridiem" id="userMeridiem" class="form-control" required>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label for="userMessage" class="form-label h5">Enter Message</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="userMessage"
+                        id="userMessage"
+                        required
+                    />
+                </div>
+                <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+                <button class="btn btn-danger" type="submit" id="clearAlarms">
+                    Clear All Alarms
+                </button>
+            </form>
+
+            <table class="table my-4">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="alarmItems"></tbody>
+            </table>
+        </div>
+    </body>
+</html>
