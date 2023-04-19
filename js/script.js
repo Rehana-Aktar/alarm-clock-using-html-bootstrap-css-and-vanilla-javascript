@@ -25,6 +25,15 @@ function clock() {
 }
 setInterval(clock, 1000);
 
+// requesting the user to give permission for notification
+Notification.requestPermission().then((e) => {
+    if (e === 'granted') {
+        console.log('All done!');
+    } else {
+        alert('Permission is needed to send notifications for alarm. Reload the page to get the permission again...');
+    }
+});
+
 userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (userMeridiem.value === 'PM') {
@@ -95,13 +104,9 @@ function callAlarm() {
             if (alarmHour === currentHour && alarmMinute == currentMinute && alarmSeconds === currentSeconds) {
                 let aud = new Audio('../assets/audio.mp3');
                 aud.play();
-                Notification.requestPermission().then((e) => {
-                    if (e === 'granted') {
-                        new Notification(element[3], {
-                            icon: '../assets/js.svg.ico',
-                            body: 'Your alarm is calling you'
-                        });
-                    }
+                new Notification(element[3], {
+                    icon: '../assets/js.svg.ico',
+                    body: 'Your alarm is calling you'
                 });
                 removeAlarmItem(index);
             }
