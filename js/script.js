@@ -102,10 +102,10 @@ function callAlarm() {
             let currentMinute = new Date().getMinutes();
             let currentSeconds = new Date().getSeconds();
             if (alarmHour === currentHour && alarmMinute == currentMinute && alarmSeconds === currentSeconds) {
-                let aud = new Audio('../assets/audio.mp3');
+                let aud = new Audio('./assets/audio.mp3');
                 aud.play();
                 new Notification(element[3], {
-                    icon: '../assets/js.svg.ico',
+                    icon: './assets/js.svg.ico',
                     body: 'Your alarm is calling you'
                 });
                 removeAlarmItem(index);
